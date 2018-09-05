@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+}
+
+/* ul {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  list-style: none outside none;
+} */
+
+ li {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  list-style: none outside none;
+}
+
+body {
+  line-height: 1.5;
+  /* width: 50px; */
+}
+
+figure {
+  width: auto;
+}
+
+img {
+  width: inherit;
+}
+
+
+/* html, body, header, nav, ul, li, aside, section, h2, h1, ol, figure, form, label, input  */
