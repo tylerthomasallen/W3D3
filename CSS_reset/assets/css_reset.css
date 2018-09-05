@@ -3,6 +3,8 @@
   padding: 0;
   border: 0;
   font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
 }
 
 /* ul {
@@ -27,7 +29,7 @@ body {
 }
 
 figure {
-  width: auto;
+  width: 100%;
 }
 
 img {
