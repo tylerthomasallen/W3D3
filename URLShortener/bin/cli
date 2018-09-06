@@ -1,0 +1,52 @@
+#!/usr/bin/env ruby
+
+class CLI
+  
+  attr_reader :user
+  
+  def initialize
+    @user = nil
+  end
+
+  def find_by_email
+    puts "enter your email."
+    email = gets.chomp
+    @user = User.find_by(email: email)
+    options
+  end
+
+  def options
+    puts "What do you want to do?"
+    puts "0. Create shortened URL"
+    puts "1. Visit shortened URL"
+    
+    selection = gets.chomp
+    
+    create if selection == '0'
+    visit if selection == '1'
+    options unless selection == '1' || selection == '0'
+  end
+
+  def create
+    puts "Type in your long url:"
+    
+    long = gets.chomp
+    short = ShortenedUrl.shorten_url(@user, long).short_url
+    
+    puts "Short url is: #{short}"
+    puts "Goodbye!"
+  end
+  
+  def visit
+    puts "Type in the shortened_url:"
+    short = gets.chomp
+    long = ShortenedUrl.find_by(short_url: short).long_url
+    
+    puts "Launching #{long} ..."
+    puts "Goodbye!"
+    
+    Launchy.open(long)
+  end
+end
+
+CLI.new.find_by_email
